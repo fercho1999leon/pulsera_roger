@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\ControllerCRUBContactos;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
@@ -53,4 +54,14 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
+    //CAMBIAR TODO A POST
+    Route::post('contactos/create',[ControllerCRUBContactos::class,'create']);
+    Route::post('contactos/read',[ControllerCRUBContactos::class,'read']);
+    Route::post('contactos/update',[ControllerCRUBContactos::class,'update']);
+    Route::post('contactos/delete',[ControllerCRUBContactos::class,'delete']);
+
+    //CSRF TOKEN
+    Route::get('get/token',function(){
+        return csrf_token();
+    });
 });
