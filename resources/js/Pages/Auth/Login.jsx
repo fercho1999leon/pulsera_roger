@@ -40,7 +40,7 @@ export default function Login({ status, canResetPassword }) {
 
             <form onSubmit={submit}>
                 <div>
-                    <Label forInput="email" value="Correo" />
+                    <Label forInput="email" value="Correo electronico" />
 
                     <Input
                         type="text"
@@ -80,7 +80,7 @@ export default function Login({ status, canResetPassword }) {
                             href={route('password.request')}
                             className="underline text-sm text-gray-600 hover:text-gray-900"
                         >
-                            Olvido su contraseña?
+                            ¿Olvido su contraseña?
                         </Link>
                     )}
 

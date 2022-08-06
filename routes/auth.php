@@ -60,8 +60,5 @@ Route::middleware('auth')->group(function () {
     Route::post('contactos/update',[ControllerCRUBContactos::class,'update']);
     Route::post('contactos/delete',[ControllerCRUBContactos::class,'delete']);
 
-    //CSRF TOKEN
-    Route::get('get/token',function(){
-        return csrf_token();
-    });
+
 });

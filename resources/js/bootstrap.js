@@ -12,7 +12,7 @@ window.axios = axios;
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
-fetch('/get/token', {
+/*fetch('/get/token', {
     headers: {
       'Content-Type': 'application/json',
     },
@@ -21,7 +21,7 @@ fetch('/get/token', {
     return token.text();
   }).then(token => {
     document.cookie = "__token="+token;
-  })
+  })*/
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

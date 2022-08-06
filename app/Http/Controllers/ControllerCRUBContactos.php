@@ -19,7 +19,7 @@ class ControllerCRUBContactos extends Controller
             $contactos->phone = $request->phone;
             $contactos->user_id = Auth::user()->id;
             $contactos->save();
-            return response(['msg' => 'Contacto creado correctamente'], 200); 
+            return response([], 200); 
         }
         return response(['msg' => 'Numero de telefono ya existe'], 200); 
     }
@@ -40,7 +40,7 @@ class ControllerCRUBContactos extends Controller
                     'phone' => $request->phone
                 ]
             );
-            return response(['msg' => 'ACTUALIZADO CORRECTAMENTE'], 200);
+            return $this->read();
         }
         return response(['msg' => 'Numero de telefono ya existe'], 200); 
     }
@@ -49,5 +49,6 @@ class ControllerCRUBContactos extends Controller
         if($contacto!=null){ 
             $contacto->delete();
         }
+        return $this->read();
     }
 }
