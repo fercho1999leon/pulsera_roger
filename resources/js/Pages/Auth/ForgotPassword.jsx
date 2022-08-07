@@ -25,8 +25,7 @@ export default function ForgotPassword({ status }) {
             <Head title="Forgot Password" />
 
             <div className="mb-4 text-sm text-gray-500 leading-normal">
-                Forgot your password? No problem. Just let us know your email address and we will email you a password
-                reset link that will allow you to choose a new one.
+                ¿Ha olvidado su contraseña? No hay problema. Sólo tiene que indicarnos su dirección de correo electrónico y le enviaremos un enlace que le permitirá elegir una nueva.
             </div>
 
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
@@ -45,7 +44,7 @@ export default function ForgotPassword({ status }) {
 
                 <div className="flex items-center justify-end mt-4">
                     <Button className="ml-4" processing={processing}>
-                        Email Password Reset Link
+                        Enlace para restablecer la contraseña
                     </Button>
                 </div>
             </form>

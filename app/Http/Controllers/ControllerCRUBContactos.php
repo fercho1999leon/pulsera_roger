@@ -14,7 +14,9 @@ class ControllerCRUBContactos extends Controller
     {
         $n_contactos = Contactos::where('user_id', Auth::user()->id)->get()->count();
         if ($n_contactos < 5) {
-            $validate = Contactos::where('phone', $request->phone)->first();
+            $validate = Contactos::where('phone', $request->phone)
+                                ->where('user_id', Auth::user()->id)
+                                ->first();
             if ($validate == null) {
                 $contactos = new Contactos();
                 $contactos->name = $request->name;
@@ -36,7 +38,9 @@ class ControllerCRUBContactos extends Controller
 
     public function update(Request $request)
     {
-        $validate = Contactos::where('phone', $request->phone)->first();
+        $validate = Contactos::where('phone', $request->phone)
+                            ->where('user_id', Auth::user()->id)
+                            ->first();
         if ($validate == null) {
             Contactos::where('id', $request->id)->update(
                 [
