@@ -24,7 +24,7 @@ const theme = createTheme({
     },
 });
 
-const createContacts = (setShowMsg) => {
+const createContacts = (setShowMsg,setMsg) => {
     const $form = document.getElementById('formularioCreate');
     if ($form.reportValidity()) {
         const $data = $form.elements;
@@ -46,6 +46,7 @@ const createContacts = (setShowMsg) => {
             try {
                 const data = JSON.parse(res);
                 if (data.hasOwnProperty("msg")) {
+                    setMsg(data["msg"]);
                     setShowMsg(true);
                     setTimeout(() => {
                       setShowMsg(false);
@@ -64,6 +65,7 @@ const createContacts = (setShowMsg) => {
 
 export default function Dashboard(props) {
     const [showMsg, setShowMsg] = React.useState(false);
+    const [msg, setMsg] = React.useState('false');
     return (
         <Authenticated
             auth={props.auth}
@@ -88,7 +90,7 @@ export default function Dashboard(props) {
                                     <h1>FORMULARIO DE REGISTRO</h1>
                                 </Grid>
                                 <FormularioContactos idForm={"formularioCreate"} evento={(e) => {
-                                    createContacts(setShowMsg);
+                                    createContacts(setShowMsg,setMsg);
                                 }} />
                                 {
                                     showMsg?<Grid
@@ -102,7 +104,7 @@ export default function Dashboard(props) {
                                             fontSize: '30px'
                                         }}
                                     >
-                                        <ShowAlert msg={'Numero ya existe'}/>
+                                        <ShowAlert msg={msg}/>
                                     </Grid>
                                     :
                                     null
