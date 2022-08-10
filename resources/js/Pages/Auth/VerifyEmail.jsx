@@ -14,22 +14,22 @@ export default function VerifyEmail({ status }) {
 
     return (
         <Guest>
-            <Head title="Email Verification" />
+            <Head title="Verificacion de Correo Electronico" />
 
             <div className="mb-4 text-sm text-gray-600">
-                Thanks for signing up! Before getting started, could you verify your email address by clicking on the
-                link we just emailed to you? If you didn't receive the email, we will gladly send you another.
+            Gracias por registrarte. Antes de empezar, ¿podría verificar su dirección de correo electrónico haciendo clic en el
+                enlace que acabamos de enviarle por correo electrónico? Si no has recibido el correo electrónico, te enviaremos otro con mucho gusto.
             </div>
 
             {status === 'verification-link-sent' && (
                 <div className="mb-4 font-medium text-sm text-green-600">
-                    A new verification link has been sent to the email address you provided during registration.
+                    Se ha enviado un nuevo enlace de verificación a la dirección de correo electrónico que proporcionó durante el registro.
                 </div>
             )}
 
             <form onSubmit={submit}>
                 <div className="mt-4 flex items-center justify-between">
-                    <Button processing={processing}>Resend Verification Email</Button>
+                    <Button processing={processing}>Reenviar correo de verificación</Button>
 
                     <Link
                         href={route('logout')}
@@ -37,7 +37,7 @@ export default function VerifyEmail({ status }) {
                         as="button"
                         className="underline text-sm text-gray-600 hover:text-gray-900"
                     >
-                        Log Out
+                        Cerrar sesión
                     </Link>
                 </div>
             </form>

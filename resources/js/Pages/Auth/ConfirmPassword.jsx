@@ -53,7 +53,7 @@ export default function ConfirmPassword() {
 
                 <div className="flex items-center justify-end mt-4">
                     <Button className="ml-4" processing={processing}>
-                        Confirm
+                        Confirmar
                     </Button>
                 </div>
             </form>

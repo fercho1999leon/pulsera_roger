@@ -49,7 +49,7 @@ const createContacts = (setShowMsg,setMsg) => {
                     setMsg(data["msg"]);
                     setShowMsg(true);
                     setTimeout(() => {
-                      setShowMsg(false);
+                    setShowMsg(false);
                     }, 5000);
                 } else {
                     document.location.reload();

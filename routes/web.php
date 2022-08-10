@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\ControllerApiArduino;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,5 +25,9 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+//ROUTES API LOGIN
+Route::get('/api/login',[ControllerApiArduino::class,'create']);
+//API GET COPNTACTS
+Route::middleware('auth:sanctum')->get('/api/contactos', [ControllerApiArduino::class,'getContacts']);
 
 require __DIR__.'/auth.php';

@@ -22,7 +22,7 @@ export default function ForgotPassword({ status }) {
 
     return (
         <Guest>
-            <Head title="Forgot Password" />
+            <Head title="Contraseña Olvidada" />
 
             <div className="mb-4 text-sm text-gray-500 leading-normal">
                 ¿Ha olvidado su contraseña? No hay problema. Sólo tiene que indicarnos su dirección de correo electrónico y le enviaremos un enlace que le permitirá elegir una nueva.
